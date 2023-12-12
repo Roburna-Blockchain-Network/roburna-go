@@ -1,0 +1,60 @@
+[Eth]
+NetworkId = 159
+SyncMode = "full"
+StateHistory = 90000
+LightPeers = 100
+TrieTimeout = 150000000000
+
+[Eth.Miner]
+GasFloor = 0
+GasCeil = 30000000
+GasPrice = 1000000000
+Recommit = 2000000000
+NewPayloadTimeout = 2000000000
+
+[Eth.TxPool]
+Locals = []
+NoLocals = false
+Journal = "transactions.rlp"
+Rejournal = 3600000000000
+PriceLimit = 1
+PriceBump = 10
+AccountSlots = 16
+GlobalSlots = 5120
+AccountQueue = 64
+GlobalQueue = 1024
+Lifetime = 10800000000000
+
+[Eth.BlobPool]
+Datadir = "blobpool"
+Datacap = 10737418240
+PriceBump = 100
+
+[Eth.GPO]
+Blocks = 20
+Percentile = 60
+MaxHeaderHistory = 1024
+MaxBlockHistory = 1024
+MaxPrice = 500000000000
+IgnorePrice = 2
+
+[Node]
+DataDir = "/root/roburna-go/data/testnet/node"
+IPCPath = "geth.ipc"
+HTTPHost = "0.0.0.0"
+HTTPPort = 8545
+HTTPVirtualHosts = ["*"]
+HTTPModules = ["eth", "net", "web3", "txpool", "debug", "engine", "personal", "miner", "admin"]
+WSHost = "0.0.0.0"
+WSPort = 8545
+WSModules = ["net", "web3", "eth", "personal"]
+NoUSB = true
+InsecureUnlockAllowed = true
+
+[Node.P2P]
+MaxPeers = 200
+NoDiscovery = true
+ListenAddr = ":30311"
+DiscAddr = ""
+EnableMsgEvents = false
+StaticNodes = ["enode://264d334e22a13eb89984e2da8373786ffaa8a8cf2197f60af46ff29f67a8b704927f688b8e712f623e30025c118ee5c16c56e1fc1f85fc614e07970506cfbfef@65.109.11.176:30311"]
